@@ -1,10 +1,10 @@
-#include <iostream>
 #include "Logger.h"
+
 
 int main()
 {
-	Logger log("test.txt", true, true, true);
-	log.Log("test", "main");
+	Logger log = Logger(new StdOutDest(), new TimestampFormat<Timestamp::BOTH>());
+	log.log("test");
 
 	return 0;
 }
